@@ -3,15 +3,15 @@
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
-    private float speed;
+    private float speed = 0;
 
     [SerializeField]
-    private float maxY;
+    private float maxY = 0;
 
     [SerializeField]
-    private float minY;
+    private float minY = 0;
 
-    private float ySpeed;
+    private float ySpeed = 0;
 
     // Start is called before the first frame update
     void Start()

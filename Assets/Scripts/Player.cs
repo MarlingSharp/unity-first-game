@@ -5,13 +5,15 @@ public class Player : MonoBehaviour
 {
     private static readonly float JUMP_HEIGHT = 8.0f;
     private static readonly float RUNNING_SPEED = 2.0f;
-    private static readonly Vector3 START_POSITION = new Vector3(0, 2, 0);
 
     private bool jumpKeyPressed = false;
     private float horizontalMovement = 0;
     private Rigidbody rigidbodyComponent;
     private int coins = 0;
     private int deaths = 0;
+
+    [SerializeField]
+    private GameObject spawnPoint;
 
     [SerializeField]
     private Transform groundCheckTransform = null;
@@ -79,7 +81,8 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        rigidbodyComponent.position = START_POSITION;
+        rigidbodyComponent.position = new Vector3(spawnPoint.transform.position.x - 2,
+            spawnPoint.transform.position.y + 2, spawnPoint.transform.position.z);
         rigidbodyComponent.velocity = Vector3.zero;
         deaths++;
         txtDeaths.text = string.Format("Deaths: {0}", deaths);

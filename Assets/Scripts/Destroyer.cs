@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Destroyer : MonoBehaviour
 {
-    private float lifetime = 10.0f;
+    private float lifetime = 5;
 
     // Update is called once per frame
     void Update()
