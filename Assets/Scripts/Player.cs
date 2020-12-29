@@ -57,7 +57,7 @@ public class Player : MonoBehaviour
             0);
 
         // Move back to start if falls through the floor
-        if (rigidbodyComponent.position.y < -4)
+        if (rigidbodyComponent.position.y < Constants.BEDROCK_Y)
         {
             Die();
         }
